@@ -47,7 +47,7 @@ const Login = () => {
 
         localStorage.setItem('userInfo', JSON.stringify(data));
         setLoading(false);
-        history.pushState('/chats');
+        history.push('/chats');
 
         }catch(err){
            toast({

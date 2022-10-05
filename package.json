@@ -4,8 +4,10 @@
   "private": true,
   "proxy": "http://127.0.0.1:5001",
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.11",
     "@chakra-ui/react": "^2.3.4",
     "@chakra-ui/styled-system": "^2.3.3",
+    "@chakra-ui/system": "^2.2.12",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@testing-library/jest-dom": "^5.14.1",
