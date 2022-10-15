@@ -15,6 +15,8 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import axios from "axios"
+import ChatLoading from './ChatLoading';
+import UserListItem from './userAvatar/UserListItem';
 
 const SideBar = () => {
   const [search, setSearch] = useState("");
@@ -43,6 +45,10 @@ const handleSearch = async() =>{
           position: "top-left",
         });
         return;
+  }
+
+  const accessChat = (userId) =>{
+
   }
 
   try{
@@ -151,9 +157,19 @@ const handleSearch = async() =>{
             onClick={handleSearch}
             >Go</Button>
           </Box>
+          {loading? (
+               <ChatLoading/>
+          ):(
+            searchResult?.map(user=> (
+              <UserListItem 
+              user = {user}
+              key={user._id} 
+              handleFunction={()=>accessChat(user._id)}
+              />
+            ))
+          )}
         </DrawerBody>
         </DrawerContent>
-        
       </Drawer>
     </>
   )
