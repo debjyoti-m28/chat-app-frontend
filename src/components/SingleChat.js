@@ -6,6 +6,8 @@ import { getSender, getSenderFull } from '../config/ChatLogics'
 import Profile from './Profile'
 import UpdateGroupChatModal from './UpgradeGroupChatModal'
 import axios from "axios"
+import './style.css'
+import ScrollableChat from './ScrollableChat'
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
    const [messages, setMessages] = useState([]);
@@ -61,7 +63,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 content: newMessage,
                 chatId: selectedChat._id,
             }, config);
-            console.log(data);
+            // console.log(data);
             setMessages([...messages, data]);
         }catch(err){
            toast({
@@ -107,7 +109,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             ):(
                 <>
                   {selectedChat.chatName.toUpperCase() }
-                  <UpdateGroupChatModal fetchAgain={fetchAgain} setFetchAgain={setFetchAgain}/>
+                  <UpdateGroupChatModal fetchAgain={fetchAgain} setFetchAgain={setFetchAgain} fetchMessages={fetchMessages}/>
                 </>
             )}
          </Text>
@@ -132,8 +134,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             margin="auto"
             />
           ):(
-            <div>
-                Messages
+            <div className="messages">
+                <ScrollableChat messages={messages}/>
             </div>
           )}
 

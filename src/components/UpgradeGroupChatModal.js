@@ -22,7 +22,7 @@ import { ChatState } from "../context/ChatProvider";
 import UserBadgeItem from "./userAvatar/UserBadgeItem";
 import UserListItem from "./userAvatar/UserListItem";
 
-const UpdateGroupChatModal = ({ fetchMessages, fetchAgain, setFetchAgain }) => {
+const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [groupChatName, setGroupChatName] = useState();
   const [search, setSearch] = useState("");
