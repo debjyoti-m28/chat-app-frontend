@@ -6016,6 +6016,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:3":
+  version: 3.26.0
+  resolution: "core-js@npm:3.26.0"
+  checksum: 0149eb9d3909fde9c17626af3a6e625c326e8598d0bb5e6c5b48a18e5fcd4eaf48d4964d873667d8148542ff590fb98eb3f93618da114ca54999d6bc0349734b
+  languageName: node
+  linkType: hard
+
 "core-js@npm:^3.19.2":
   version: 3.25.2
   resolution: "core-js@npm:3.25.2"
@@ -7794,8 +7801,10 @@ __metadata:
     "@testing-library/user-event": ^13.2.1
     axios: ^0.27.2
     framer-motion: ^7.3.6
+    prop-types: ^15.8.1
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-notification-badge: ^1.5.1
     react-router-dom: 5
     react-scripts: 5.0.1
     react-scrollable-feed: ^1.3.1
@@ -12084,6 +12093,19 @@ __metadata:
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
   checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
+  languageName: node
+  linkType: hard
+
+"react-notification-badge@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "react-notification-badge@npm:1.5.1"
+  dependencies:
+    core-js: 3
+  peerDependencies:
+    prop-types: ^15.7.2
+    react: ^16.8.6
+    react-dom: ^16.8.6
+  checksum: f6e07da020189622ad80b36fe7fd4232e44fd5e3ec205adf1004ff852d7f4a0c95f679d74d0b86b31a2d53dd398e8c7fc5ea30112fbe08823e6e8021c26ebf24
   languageName: node
   linkType: hard
 
