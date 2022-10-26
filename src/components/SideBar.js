@@ -17,6 +17,7 @@ import {
 import axios from "axios"
 import ChatLoading from './ChatLoading';
 import UserListItem from './userAvatar/UserListItem';
+import { getSender } from '../config/ChatLogics';
 
 const SideBar = () => {
   const [search, setSearch] = useState("");
@@ -24,7 +25,7 @@ const SideBar = () => {
   const [loading, setLoading] = useState(false);
   const [loadingChat, setLoadingChat] = useState(false);
 
-const { user, setSelectedChat, chats, setChats } = ChatState();
+const { user, setSelectedChat, chats, setChats,  notification, setNotification } = ChatState();
 const history = useHistory();
 const { isOpen, onOpen, onClose } = useDisclosure()
 const toast = useToast();
@@ -136,7 +137,17 @@ const accessChat = async(userId) =>{
           <MenuButton p={1}>
             <BellIcon fontSize="2xl" m={1} />
           </MenuButton>
-          {/* <MenuList></MenuList> */}
+          <MenuList pl={2}>
+            {!notification.length && "Now new messages"}
+            {notification.map((notif)=> (
+              <MenuItem key={notif._id} onClick={()=>{
+                setSelectedChat(notif.chat);
+                setNotification(notification.filter((n)=> n!==notif));
+              }}>
+                {notif.chat.isGroupChat ? `New Message in ${notif.chat.chatName}` : `New Message from ${getSender(user, notif.chat.users)}` }
+              </MenuItem>
+            ))}
+          </MenuList>
         </Menu>
 
         <Menu>
